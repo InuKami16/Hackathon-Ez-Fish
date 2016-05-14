@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="fill_parent"
+   android:layout_height="fill_parent"
+   android:orientation="vertical" >
+
+   <TextView
+       android:id="@+id/text2"
+       android:layout_width="wrap_content"
+       android:layout_height="25dp"
+       android:gravity="center"
+       android:layout_marginTop="20dp"
+       android:text="" />
+
+   <TextView
+       android:id="@+id/text"
+       android:layout_width="wrap_content"
+       android:layout_height="25dp"
+       android:layout_alignBaseline="@+id/text2"
+       android:layout_alignBottom="@+id/text2"
+       android:layout_centerHorizontal="true"
+       android:gravity="center"
+       android:text="Challenge #3" />
+
+   <Button
+       android:id="@+id/btn_back"
+       android:layout_width="40dp"
+       android:layout_height="40dp"
+       android:layout_alignParentBottom="true"
+       android:layout_alignParentRight="true"
+       android:layout_marginBottom="18dp"
+       android:layout_marginRight="30dp"
+       android:gravity="right"
+       android:text="X" />
+
+   <Button
+       android:id="@+id/btn_camera"
+       android:layout_width="180dp"
+       android:layout_height="180dp"
+       android:layout_above="@+id/btn_camera2"
+       android:layout_centerHorizontal="true"
+       android:layout_marginBottom="44dp"
+       android:background="@drawable/view_dotted_line"
+       android:gravity="center"
+       android:text="Insert Photo" />
+
+   <Button
+       android:id="@+id/btn_camera2"
+       android:layout_width="186dp"
+       android:layout_height="wrap_content"
+       android:layout_above="@+id/btn_back"
+       android:layout_alignRight="@+id/btn_camera"
+       android:layout_marginBottom="26dp"
+       android:gravity="center"
+       android:text="Take Photo" />
+
+</RelativeLayout>
