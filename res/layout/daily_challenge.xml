@@ -30,8 +30,8 @@
       />
       
    <ImageButton android:id="@+id/imageButton"
-      android:layout_width="100dp"
-      android:layout_height="100dp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
       android:layout_below="@+id/text"
       android:layout_marginTop="22dp"
       android:layout_centerHorizontal="true"
@@ -46,7 +46,7 @@
        android:layout_below="@+id/imageButton"
        android:layout_marginTop="30dp"
        android:gravity="center"
-       android:layouy_marginLeft="50dp"
+       android:layout_marginLeft="50dp"
        android:text="Back"
        android:textSize="15sp" />
 

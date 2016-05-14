@@ -38,7 +38,6 @@
        android:layout_alignLeft="@+id/text1"
        android:layout_below="@+id/text1"
        android:layout_marginTop="22dp"
-       android:layouy_alignLeft="@+id/text1"
        android:text="Press Take Photos to take a photo and it will check if it is correct or not."
        android:textSize="15sp" />
 

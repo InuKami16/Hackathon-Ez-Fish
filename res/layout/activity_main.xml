@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -16,34 +17,11 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="18dp"
-        android:background="#FFFFFF"
+        android:background="#000000"
         android:gravity="center"
         android:text="Virtual Scavenger Hunt"
+        android:textColor="#FFFFFF"
         android:textSize="28sp" />
-     <Button
-        android:id="@+id/dailyChallenge"
-        android:layout_width="225dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/title"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="47dp"
-        android:text="Daily Scavenger Challenge" />
-    <Button
-        android:id="@+id/mainChallenges"
-        android:layout_width="225dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/dailyChallenge"
-        android:layout_below="@+id/dailyChallenge"
-        android:layout_marginTop="28dp"
-        android:text="Main Challenges" />
-    <Button
-        android:id="@+id/instruction"
-        android:layout_width="225dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/mainChallenges"
-        android:layout_below="@+id/mainChallenges"
-        android:layout_marginTop="28dp"
-        android:text="Instructions" />
 
     <ImageButton
         android:id="@+id/imageButton1"
@@ -51,7 +29,33 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/instruction"
-        android:layout_marginBottom="0dp"
+        android:layout_marginBottom="26dp"
         android:src="@drawable/ic_launcher" />
+
+    <Button
+        android:id="@+id/instruction"
+        android:layout_width="225dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageButton1"
+        android:layout_alignLeft="@+id/mainChallenges"
+        android:text="Instructions" />
+
+    <Button
+        android:id="@+id/dailyChallenge"
+        android:layout_width="225dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/mainChallenges"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="26dp"
+        android:text="Daily Scavenger Challenge" />
+
+    <Button
+        android:id="@+id/mainChallenges"
+        android:layout_width="225dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/instruction"
+        android:layout_alignLeft="@+id/dailyChallenge"
+        android:layout_marginBottom="26dp"
+        android:text="Main Challenges" />
 
 </RelativeLayout>
