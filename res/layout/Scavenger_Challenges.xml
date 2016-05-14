@@ -17,8 +17,7 @@
        android:layout_height="wrap_content"
        android:layout_gravity="center"
        android:layout_marginTop="50dp"
-       android:text="Challenge 1" 
-       android:onClick="open1"/>
+       android:text="Challenge 1" />
       
    <Button
        android:id="@+id/btn_chall2"
@@ -26,8 +25,7 @@
        android:layout_height="wrap_content"
        android:layout_gravity="center"
        android:layout_marginTop="10dp"
-      android:text="Challenge 2" 
-      android:onClick="open2"/>
+      android:text="Challenge 2" />
    
    <Button
        android:id="@+id/btn_chall3"
@@ -35,8 +33,7 @@
        android:layout_height="wrap_content"
        android:layout_gravity="center"
        android:layout_marginTop="10dp"
-       android:text="Challenge 3" 
-       android:onClick="open3"/>
+       android:text="Challenge 3" />
       
    <Button
        android:id="@+id/btn_chall4"
@@ -44,8 +41,7 @@
        android:layout_height="wrap_content"
        android:layout_gravity="center"
        android:layout_marginTop="10dp"
-       android:text="Challenge 4" 
-       android:onClick="open4"/>
+       android:text="Challenge 4" />
 
    <Button
        android:id="@+id/btn_chall5"
@@ -53,8 +49,7 @@
        android:layout_height="wrap_content"
        android:layout_gravity="center"
        android:layout_marginTop="10dp"
-       android:text="Challenge 5" 
-       android:onClick="open5"/>
+       android:text="Challenge 5" />
 
    <Button
        android:id="@+id/btn_back"
@@ -62,7 +57,6 @@
        android:layout_height="wrap_content"
        android:layout_gravity="right"
        android:layout_marginTop="30dp"
-       android:onClick="returnMain"
        android:text="X" />
 
 </LinearLayout>
