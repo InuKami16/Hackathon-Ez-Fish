@@ -10,7 +10,7 @@
        android:layout_height="wrap_content"
        android:layout_above="@+id/btn_back"
        android:layout_centerHorizontal="true"
-       android:layout_marginBottom="20dp"
+       android:layout_marginBottom="0dp"
        android:gravity="center"
        android:text="Challenge 5" />
 
