@@ -2,46 +2,54 @@
    android:layout_width="fill_parent"
    android:layout_height="fill_parent"
    android:orientation="vertical" >
-   
-   <TextView
-       android:id="@+id/text"
-       android:layout_width="wrap_content"
-       android:layout_height="25dp"
-       android:layout_gravity="center"
-       android:layout_marginTop="10dp"
-       android:text="Daily Scavenger Challenge" />
 
    <TextView
-       android:id="@+id/text"
+       android:id="@+id/text2"
        android:layout_width="wrap_content"
        android:layout_height="25dp"
-       android:layout_gravity="center"
+       android:gravity="center"
        android:layout_marginTop="20dp"
        android:text="" />
 
-      <Button
+   <Button
+       android:id="@+id/btn_back"
+       android:layout_width="40dp"
+       android:layout_height="40dp"
+       android:layout_alignParentBottom="true"
+       android:layout_marginBottom="20dp"
+       android:layout_toRightOf="@+id/btn_camera2"
+       android:gravity="right"
+       android:text="X" />
+
+   <Button
        android:id="@+id/btn_camera"
        android:layout_width="180dp"
        android:layout_height="180dp"
-       android:layout_gravity="center"
-       android:layout_marginTop="25dp"
-       android:text="Insert Photo"
-	   android:background="@drawable/view_dotted_line" />
-      
-   <Button
-       android:id="@+id/btn_camera"
-       android:layout_width="186dp"
-       android:layout_height="wrap_content"
-       android:layout_gravity="center"
-       android:layout_marginTop="40dp"
-       android:text="Take Photo" />
+       android:layout_above="@+id/btn_camera2"
+       android:layout_alignRight="@+id/text"
+       android:layout_marginBottom="37dp"
+       android:background="@drawable/view_dotted_line"
+       android:gravity="center"
+       android:text="Insert Photo" />
+
+   <TextView
+       android:id="@+id/text"
+       android:layout_width="wrap_content"
+       android:layout_height="25dp"
+       android:layout_alignBaseline="@+id/text2"
+       android:layout_alignBottom="@+id/text2"
+       android:layout_centerHorizontal="true"
+       android:gravity="center"
+       android:text="Daily Scavenger Challenge" />
 
    <Button
-       android:id="@+id/btn_back"
-       android:layout_width="wrap_content"
+       android:id="@+id/btn_camera2"
+       android:layout_width="186dp"
        android:layout_height="wrap_content"
-       android:layout_gravity="right"
-       android:layout_marginTop="20dp"
-       android:text="X" />
+       android:layout_above="@+id/btn_back"
+       android:layout_alignRight="@+id/btn_camera"
+       android:layout_marginBottom="38dp"
+       android:gravity="center"
+       android:text="Take Photo" />
 
 </RelativeLayout>

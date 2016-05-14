@@ -1,62 +1,77 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-   android:layout_width="fill_parent"
-   android:layout_height="fill_parent"
-   android:orientation="vertical" >
-   
-   <TextView
-       android:id="@+id/text"
-       android:layout_width="wrap_content"
-       android:layout_height="25dp"
-       android:layout_gravity="center"
-       android:layout_marginTop="10dp"
-       android:text="Daily Scavenger Challenge" />
-
-   <Button
-       android:id="@+id/btn_chall1"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_gravity="center"
-       android:layout_marginTop="50dp"
-       android:text="Challenge 1" />
-      
-   <Button
-       android:id="@+id/btn_chall2"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_gravity="center"
-       android:layout_marginTop="10dp"
-      android:text="Challenge 2" />
-   
-   <Button
-       android:id="@+id/btn_chall3"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_gravity="center"
-       android:layout_marginTop="10dp"
-       android:text="Challenge 3" />
-      
-   <Button
-       android:id="@+id/btn_chall4"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_gravity="center"
-       android:layout_marginTop="10dp"
-       android:text="Challenge 4" />
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="top"
+    android:orientation="vertical" >
 
    <Button
        android:id="@+id/btn_chall5"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:layout_gravity="center"
-       android:layout_marginTop="10dp"
+       android:layout_above="@+id/btn_back"
+       android:layout_centerHorizontal="true"
+       android:layout_marginBottom="20dp"
+       android:gravity="center"
        android:text="Challenge 5" />
 
    <Button
-       android:id="@+id/btn_back"
+       android:id="@+id/btn_chall4"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:layout_gravity="right"
-       android:layout_marginTop="30dp"
+       android:layout_above="@+id/btn_chall5"
+       android:layout_alignLeft="@+id/btn_chall5"
+       android:layout_marginBottom="17dp"
+       android:gravity="center"
+       android:text="Challenge 4" />
+
+   <Button
+       android:id="@+id/btn_chall3"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_above="@+id/btn_chall4"
+       android:layout_alignLeft="@+id/btn_chall4"
+       android:layout_marginBottom="22dp"
+       android:gravity="center"
+       android:text="Challenge 3" />
+
+   <Button
+       android:id="@+id/btn_chall2"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_above="@+id/btn_chall3"
+       android:layout_alignLeft="@+id/btn_chall3"
+       android:layout_marginBottom="18dp"
+       android:gravity="center"
+       android:text="Challenge 2" />
+
+   <Button
+       android:id="@+id/btn_chall1"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_above="@+id/btn_chall2"
+       android:layout_alignLeft="@+id/btn_chall2"
+       android:layout_marginBottom="14dp"
+       android:text="Challenge 1" />
+
+   <Button
+       android:id="@+id/btn_back"
+       android:layout_width="40dp"
+       android:layout_height="40dp"
+       android:layout_alignParentBottom="true"
+       android:layout_alignParentRight="true"
+       android:layout_marginBottom="19dp"
+       android:layout_marginRight="24dp"
+       android:gravity="right"
        android:text="X" />
+
+   <TextView
+       android:id="@+id/text"
+       android:layout_width="wrap_content"
+       android:layout_height="25dp"
+       android:layout_above="@+id/btn_chall1"
+       android:layout_centerHorizontal="true"
+       android:layout_marginBottom="20dp"
+       android:gravity="center"
+       android:text="Scavenger Challenges" />
 
 </RelativeLayout>
