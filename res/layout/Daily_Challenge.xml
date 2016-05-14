@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
    android:layout_width="fill_parent"
    android:layout_height="fill_parent"
    android:orientation="vertical" >
@@ -17,7 +17,7 @@
        android:layout_height="25dp"
        android:layout_gravity="center"
        android:layout_marginTop="20dp"
-       android:text="Find a" />
+       android:text="" />
 
       <Button
        android:id="@+id/btn_camera"
@@ -44,4 +44,4 @@
        android:layout_marginTop="20dp"
        android:text="X" />
 
-</LinearLayout>
+</RelativeLayout>
