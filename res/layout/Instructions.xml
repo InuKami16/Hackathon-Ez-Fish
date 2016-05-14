@@ -4,24 +4,33 @@
    android:orientation="vertical" >
    
    <TextView android:id="@+id/text"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
+       android:layout_width="wrap_content"
+       android:layout_height="25dp"
+       android:layout_gravity="center"
+       android:layout_marginTop="20dp"
       android:text="Instructions" />
 
    <TextView android:id="@+id/text"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
+       android:layout_width="wrap_content"
+       android:layout_height="25dp"
+       android:layout_gravity="center"
+       android:layout_marginTop="50dp"
       android:text="You will be ask to find an something." />
       
    <TextView android:id="@+id/text"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_gravity="center"
+       android:layout_marginTop="50dp"
       android:text="Press 'Take Photo' to take a photo and it will check if it's correct or not." />
 
-   <Button android:id="@+id/button"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Back" 
-      android:onClick="returnMain"/>
+   <Button
+       android:id="@+id/btn_back"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_gravity="right"
+       android:layout_marginTop="200dp"
+       android:onClick="returnMain"
+       android:text="X" />
 
 </LinearLayout>

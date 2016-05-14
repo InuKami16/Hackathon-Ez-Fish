@@ -9,7 +9,7 @@
        android:layout_height="25dp"
        android:layout_gravity="center"
        android:layout_marginTop="10dp"
-       android:text="Daily Scavenger Challenge" />
+       android:text="Challenge #" />
 
    <TextView
        android:id="@+id/text"
@@ -19,7 +19,7 @@
        android:layout_marginTop="20dp"
        android:text="Find a" />
 
-      <Button
+   <Button
        android:id="@+id/btn_camera"
        android:layout_width="180dp"
        android:layout_height="180dp"
