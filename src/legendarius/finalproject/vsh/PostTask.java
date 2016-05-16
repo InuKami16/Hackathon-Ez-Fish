@@ -19,6 +19,8 @@ import org.json.JSONObject;
 import android.os.AsyncTask;
 import android.util.Log;
 
+/** This is an asynchronous task sending a POST Request to Clarifai server */
+/** in order to receive an access token, which is needed to use the API */
 public class PostTask extends AsyncTask<String, String, String> {
 	HttpClient httpclient;
 	@Override
@@ -41,14 +43,13 @@ public class PostTask extends AsyncTask<String, String, String> {
 	    	Log.i("Ressdlafhlas", resp);
 	    	
 	    	JSONObject jo = new JSONObject(resp);
-	    	Credentials.setAccessToken((String)jo.get("access_token"));
-		} catch (ClientProtocolException e) {
-			
-		} catch (IOException e) {
-			
-		} catch (JSONException e) {
-			
-		}
+	    	String accessToken = (String)jo.get("access_token");
+	    	
+	    	Credentials.setAccessToken(accessToken);
+	    	Log.i("parsed access_token: ", accessToken);
+		} catch (ClientProtocolException e) {} 
+		catch (IOException e) {} 
+		catch (JSONException e) {}
 		
 		return null;
 	}

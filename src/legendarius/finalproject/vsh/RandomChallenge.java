@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 public class RandomChallenge extends Activity implements Button.OnClickListener {
 	
-	private String challenge = "Find a ";
+	private String challenge = "Find a(n) ";
 	
 	private String[] objects = {"pigeon", "fast food restaurant", "shopping cart", 
 								"playground", "fire hydrant", "sign", 
