@@ -19,35 +19,42 @@ import org.json.JSONObject;
 import android.os.AsyncTask;
 import android.util.Log;
 
+/** Server returns TOKEN_INVALID */
+
 public class PostTaskTag extends AsyncTask<String, String, String> {
-	HttpClient httpclient;
+	
+	private HttpClient httpclient;
+	private boolean useURL;
+	
 	@Override
 	protected String doInBackground(String... data) {
 		// TODO Auto-generated method stub
 
 		try {
+			useURL = false;
+			
 	    	httpclient = new DefaultHttpClient();
 	    	HttpPost httppost = new HttpPost("https://api.clarifai.com/v1/tag/");
-	    	httppost.setHeader("Authorization: Bearer", Credentials.accessToken);
+	    	httppost.addHeader("Authorization: Bearer", Credentials.accessToken);
 	    	
-	    	List<NameValuePair> nvp = new ArrayList<NameValuePair>(3);
-	  		nvp.add(new BasicNameValuePair("url", "https://samples.clarifai.com/metro-north.jpg"));
+	    	List<NameValuePair> nvp = new ArrayList<NameValuePair>(1);
+	    	
+	    	if (useURL == true)
+	    		nvp.add(new BasicNameValuePair("url", "https://samples.clarifai.com/metro-north.jpg"));
+	    	else 
+	    		nvp.add(new BasicNameValuePair("encoded_data", "@" + CamController.scavDir));
+
 	   		
+	  		Log.i("Directory check", CamController.scavDir);
+	  		
 	    	httppost.setEntity(new UrlEncodedFormEntity(nvp));
 	    		
 	    	HttpResponse response = httpclient.execute(httppost);
 	    	String resp = EntityUtils.toString(response.getEntity());
-	    	Log.i("Gitrahsdm", resp);
+	    	Log.i("TagTest", resp); // Token invalid, authentication error returned
 	    	
 	    	JSONObject jo = new JSONObject(resp);
-	    	Credentials.setAccessToken((String)jo.get("access_token"));
-		} catch (ClientProtocolException e) {
-			
-		} catch (IOException e) {
-			
-		} catch (JSONException e) {
-			
-		}
+		} catch (ClientProtocolException e) {} catch (IOException e) {} catch (JSONException e) {}
 		
 		return null;
 	}

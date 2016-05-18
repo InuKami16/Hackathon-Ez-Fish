@@ -49,5 +49,13 @@
        android:layout_marginRight="14dp"
        android:text="Refresh" />
 
+   <Button
+       android:id="@+id/btnTestTag"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignLeft="@+id/btnRefresh"
+       android:layout_alignParentBottom="true"
+       android:text="Token Test" />
+
 </RelativeLayout>
 

@@ -1,21 +1,13 @@
 package legendarius.finalproject.vsh;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.File;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.util.EntityUtils;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.os.Environment;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -33,8 +25,6 @@ public class MainActivity extends Activity implements Button.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        //ClarifaiClient clarifai = new ClarifaiClient(); // this causes crash
-        
         toMainChallenges = (Button)findViewById(R.id.mainChallenges);
         toMainChallenges.setOnClickListener(this);
         
@@ -43,19 +33,19 @@ public class MainActivity extends Activity implements Button.OnClickListener {
         
         toInstructions = (Button)findViewById(R.id.instruction);
         toInstructions.setOnClickListener(this);
+
+        // Here, we are making a folder named picFolder to store
+        // pics taken by the camera using this application.
+        
+        File newdir = new File(CamController.PHOTO_DIRECTORY);
+        newdir.mkdirs();
         
         try {
-			sendPost();
+        	new PostTask().execute(); // request access token from Clarifai servers
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        
-        try {
-        	new PostTaskTag().execute();
-        } catch (Exception e) {
-        	e.printStackTrace();
-        }
     }
 
     @Override
@@ -63,24 +53,6 @@ public class MainActivity extends Activity implements Button.OnClickListener {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
-    }
-    
-    private void sendPost() throws Exception {
-//    	httpclient = new DefaultHttpClient();
-//    	HttpPost httppost = new HttpPost("https://api.clarifai.com/v1/token/");
-//    	
-//    	List<NameValuePair> nvp = new ArrayList<NameValuePair>(3);
-//  		nvp.add(new BasicNameValuePair("client_id", Credentials.CLIENT_ID));
-//   		nvp.add(new BasicNameValuePair("client_secret", Credentials.CLIENT_SECRET));
-//   		nvp.add(new BasicNameValuePair("grant_type", "client_credentials"));
-//   		
-//    	httppost.setEntity(new UrlEncodedFormEntity(nvp));
-//    		
-//    	HttpResponse response = httpclient.execute(httppost);
-//    	String resp = EntityUtils.toString(response.getEntity());
-//    	Log.i("Ressdlafhlas", resp);
-    	
-    	new PostTask().execute();
     }
     
 	@Override

@@ -1,11 +1,15 @@
 package legendarius.finalproject.vsh;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Random;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -25,7 +29,7 @@ public class RandomChallenge extends Activity implements Button.OnClickListener 
 	private String obj = "";
 	
 	private TextView scav;
-	private Button refresh;
+	private Button refresh, testTokenButton;
 	private ImageButton camButton;
 	
 	@Override
@@ -43,6 +47,9 @@ public class RandomChallenge extends Activity implements Button.OnClickListener 
 		
 		camButton = (ImageButton)findViewById(R.id.imageButton);
 		camButton.setOnClickListener(this);
+		
+		testTokenButton = (Button)findViewById(R.id.btnTestTag);
+		testTokenButton.setOnClickListener(this);
 	}
 
 	@Override
@@ -71,9 +78,55 @@ public class RandomChallenge extends Activity implements Button.OnClickListener 
 				scav.setText(challenge + obj);
 				break;
 			case R.id.imageButton:
-				Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-				startActivity(i);
+                // Here, the counter will be incremented each time, and the
+                // picture taken by camera will be stored as 1.jpg,2.jpg
+                // and likewise.
+                CamController.count++;
+                String file = CamController.PHOTO_DIRECTORY + CamController.count + ".jpg";
+                File newfile = new File(file);
+                CamController.setScavDirectory(file);
+                
+                try {
+                    newfile.createNewFile();
+                }
+                catch (IOException e) {}
+
+                Uri outputFileUri = Uri.fromFile(newfile);
+
+                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, outputFileUri);
+                
+                startActivityForResult(cameraIntent, CamController.PICTURE_TAKING_CODE);
+                
 				break;
+			case R.id.btnTestTag:
+				
+		        try {
+		        	new PostTaskTag().execute(); 
+		        } catch (Exception e) { e.printStackTrace(); }
+				
+				break;
+		}
+	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		
+		if (resultCode == Activity.RESULT_OK) {
+			switch (requestCode) {
+				case CamController.PICTURE_TAKING_CODE:
+					
+			        try {
+			        	new PostTaskTag().execute(); 
+			        } catch (Exception e) {
+			        	e.printStackTrace();
+			        }
+					
+					Log.i("Pic dir", CamController.PHOTO_DIRECTORY + CamController.count + ".jpg");
+					Log.i("CameraResult", "Pic saved");
+					break;
+			}
 		}
 	}
 
